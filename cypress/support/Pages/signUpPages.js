@@ -2,94 +2,109 @@ import { BasePage } from "./basePage"
 
 export class RegisterPage extends BasePage {
 
-    elemets = {
-        name:'[data-qa="signup-name"]',
-        email:'[data-qa="signup-email"]',
-        signUpButton:'[data-qa="signup-button"]',
+    elements = {
+        name: '[data-qa="signup-name"]',
+        email: '[data-qa="signup-email"]',
+        signUpButton: '[data-qa="signup-button"]',
         genderFemale: '#id_gender1',
         genderMale: '#id_gender',
-        password:'[data-qa="password"]'
+        password: '[data-qa="password"]',
+        day: '[data-qa="days"]',
+        months: '[data-qa="months"]',
+        years: '[data-qa="years"]',
+        news: '#newsletter',
+        firstName: '[data-qa="first_name"]',
+        lastName: '[data-qa="last_name"]',
+        company: '[data-qa="company"]',
+        address: '[data-qa="address"]',
+        address2: '[data-qa="address2"]',
+        country: '[data-qa="country"]',
+        state: '[data-qa="state"]',
+        city: '[data-qa="city"]',
+        zipcode: '[data-qa="zipcode"]',
+        mobileNumber: '[data-qa="mobile_number"]',
+        createAccountBtn: '[data-qa="create-account"]'
 
     }
     
     typeName(name) {
-         this.type(this.elemets.name, name)
+         this.type(this.elements.name, name)
     }
 
     typeEmail(email) {
-         this.type(this.elemets.email, email)
+         this.type(this.elements.email, email)
     }
 
     clickSignUpButton() {
-         this.click(this.elemets.signUpButton)
+         this.click(this.elements.signUpButton)
     }
     
     selectGender() {
-         this.click(this.elemets.genderFemale)
+         this.click(this.elements.genderFemale)
     }
 
     typePassword(password) {
-         this.type(this.elemets.password, password)
+         this.type(this.elements.password, password)
     }
 
     selectDay(day) {
-        cy.get('[data-qa="days"]').select(day)
+         this.select(this.elements.day).select(day)
     }
 
     selectMonth(months) {
-        cy.get('[data-qa="months"]').select(months)
+         this.select(this.elements.months).select(months)
     }
 
     selectYear(years) {
-        cy.get('[data-qa="years"]').select(years)
+         this.select(this.elements.years).select(years)
     }
 
     selectNews() {
-        cy.get('#newsletter').click()
+         this.click(this.elements.news)
     }
 
-    selectFirstName(firstName) {
-        cy.get('[data-qa="first_name"]').type(firstName)
+    typeFirstName(firstName) {
+         this.type(this.elements.firstName, firstName)
     }
 
-    selectLastName(lastName) {
-        cy.get('[data-qa="last_name"]').type(lastName)
+    typeLastName(lastName) {
+         this.type(this.elements.lastName, lastName)
     }
 
-    selectCompany(company) {
-        cy.get('[data-qa="company"]').type(company)
+     typeCompany(company) {
+        this.type(this.elements.company, company)
     }
 
-    selectAddres(adress) {
-        cy.get('[data-qa="address"]').type(adress)
+    typeAddress(address) {
+        this.type(this.elements.address, address)
     }
 
-    selectAdressDos(adressDos) {
-        cy.get('[data-qa="address2"]').type(adressDos)
+    typeAddress2(address2) {
+        this.type(this.elements.address2, address2)
     }
 
     selectCountry(country) {
-        cy.get('[data-qa="country"]').select(country)
+        cy.get(this.elements.country).select(country)
     }
 
-    selectStates(state) {
-        cy.get('[data-qa="state"]').type(state)
+    typeState(state) {
+        this.type(this.elements.state, state)
     }
 
-    selectCity(city) {
-        cy.get('[data-qa="city"]').type(city)
+    typeCity(city) {
+        this.type(this.elements.city, city)
     }
 
-    selectZipCode(zipCode) {
-        cy.get('[data-qa="zipcode"]').type(zipCode)
+    typeZipCode(zipCode) {
+        this.type(this.elements.zipcode, zipCode)
     }
 
-    selectMobileNumber(mobileNumber) {
-        cy.get('[data-qa="mobile_number"]').type(mobileNumber)
+    typeMobileNumber(mobileNumber) {
+        this.type(this.elements.mobileNumber, mobileNumber)
     }
 
-    selectCreateCount(createCount) {
-        cy.get('[data-qa="create-account"]').click()
+    clickCreateAccount() {
+        this.click(this.elements.createAccountBtn)
     }
 }
 
