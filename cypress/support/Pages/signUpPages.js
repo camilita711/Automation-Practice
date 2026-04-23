@@ -1,4 +1,4 @@
-import { BasePage } from "./basePage"
+import { BasePage } from "./basePage.js"
 
 export class RegisterPage extends BasePage {
 
@@ -24,39 +24,33 @@ export class RegisterPage extends BasePage {
         zipcode: '[data-qa="zipcode"]',
         mobileNumber: '[data-qa="mobile_number"]',
         createAccountBtn: '[data-qa="create-account"]'
-
     }
     
-    typeName(name) {
-         this.type(this.elements.name, name)
+    fillFormInit(user) {
+           this.type(this.elements.name, user.name)
+           this.type(this.elements.email, user.email)
+           this.click(this.elements.signUpButton)
     }
 
-    typeEmail(email) {
-         this.type(this.elements.email, email)
-    }
-
-    clickSignUpButton() {
-         this.click(this.elements.signUpButton)
-    }
     
     selectGender() {
          this.click(this.elements.genderFemale)
     }
 
-    typePassword(password) {
-         this.type(this.elements.password, password)
-    }
+     typePassword(password) {
+     this.type(this.elements.password, password)
+     }
 
-    selectDay(day) {
-         this.select(this.elements.day).select(day)
-    }
+     selectDay(day) {
+     this.select(this.elements.day, day)
+     }
 
-    selectMonth(months) {
-         this.select(this.elements.months).select(months)
-    }
+     selectMonth(months) {
+     this.select(this.elements.months, months)
+     }
 
     selectYear(years) {
-         this.select(this.elements.years).select(years)
+         this.select(this.elements.years, years)
     }
 
     selectNews() {
