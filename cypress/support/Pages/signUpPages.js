@@ -8,6 +8,7 @@ export class RegisterPage extends BasePage {
         signUpButton: '[data-qa="signup-button"]',
         genderFemale: '#id_gender1',
         genderMale: '#id_gender',
+        nameSign: 'data-qa="name"',
         password: '[data-qa="password"]',
         day: '[data-qa="days"]',
         months: '[data-qa="months"]',
@@ -32,74 +33,27 @@ export class RegisterPage extends BasePage {
            this.click(this.elements.signUpButton)
     }
 
-    
-    selectGender() {
+    fillAccountInformation(user) {
          this.click(this.elements.genderFemale)
-    }
-
-     typePassword(password) {
-     this.type(this.elements.password, password)
-     }
-
-     selectDay(day) {
-     this.select(this.elements.day, day)
-     }
-
-     selectMonth(months) {
-     this.select(this.elements.months, months)
-     }
-
-    selectYear(years) {
-         this.select(this.elements.years, years)
-    }
-
-    selectNews() {
+         this.type(this.elements.password, user.password)
+         this.select(this.elements.day, user.birthday.day)
+         this.select(this.elements.months, user.birthday.month)
+         this.select(this.elements.years, user.birthday.year)
          this.click(this.elements.news)
+         this.type(this.elements.firstName, user.firstName)
+         this.type(this.elements.lastName, user.lastName)
+         this.type(this.elements.company, user.company)
+         this.type(this.elements.address, user.address)
+         this.type(this.elements.address2, user.address2)
+         this.select(this.elements.country, user.country)
+         this.type(this.elements.state, user.state)
+         this.type(this.elements.city, user.city)
+         this.type(this.elements.zipcode, user.zipCode)
+         this.type(this.elements.mobileNumber, user.mobileNumber)
+         this.click(this.elements.createAccountBtn)
+
     }
 
-    typeFirstName(firstName) {
-         this.type(this.elements.firstName, firstName)
-    }
-
-    typeLastName(lastName) {
-         this.type(this.elements.lastName, lastName)
-    }
-
-     typeCompany(company) {
-        this.type(this.elements.company, company)
-    }
-
-    typeAddress(address) {
-        this.type(this.elements.address, address)
-    }
-
-    typeAddress2(address2) {
-        this.type(this.elements.address2, address2)
-    }
-
-    selectCountry(country) {
-        cy.get(this.elements.country).select(country)
-    }
-
-    typeState(state) {
-        this.type(this.elements.state, state)
-    }
-
-    typeCity(city) {
-        this.type(this.elements.city, city)
-    }
-
-    typeZipCode(zipCode) {
-        this.type(this.elements.zipcode, zipCode)
-    }
-
-    typeMobileNumber(mobileNumber) {
-        this.type(this.elements.mobileNumber, mobileNumber)
-    }
-
-    clickCreateAccount() {
-        this.click(this.elements.createAccountBtn)
-    }
 }
 
 export const registerPage = new RegisterPage()

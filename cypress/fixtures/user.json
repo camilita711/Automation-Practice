@@ -6,9 +6,17 @@
   "lastName": "Ponciana",
   "company": "Omitividad",
   "address": "Cruz Santa",
+  "address2": "OLa",
   "country": "India",
   "state": "RE",
   "city": "indiana",
   "zipcode": "1010",
-  "mobile": "62626262"
+  "mobile": "62626262",
+  "birthday": {
+    "day": 15,
+    "month": 3,
+    "year": 1995
+  }
+
+
 }
