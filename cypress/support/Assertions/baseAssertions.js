@@ -1,7 +1,7 @@
 export class BaseAssertions  {
 
-    urlEqual(url){
-        cy.url().should('eq', url)
+    urlEqual(expectedUrl) {
+        cy.url().should('eq', expectedUrl)
     }
 
 }

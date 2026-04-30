@@ -1,6 +1,6 @@
-import {BaseAssetions } from "./baseAssertions.js"
+import { BaseAssertions } from "./baseAssertions"
 
-class RegisterAssertion extends BaseAssetions{
+class RegisterAssertions extends BaseAssertions {
     elements = {
 
         baseUrl : "https://automationexercise.com",
@@ -9,10 +9,11 @@ class RegisterAssertion extends BaseAssetions{
 
     }
 
-
-    
-
-
-
+    validateSignUpUrl() {
+        this.urlEqual(this.elements.signUpUrl)
+    }
+  
 
 }
+
+export const registerAssertions = new RegisterAssertions()
