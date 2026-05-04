@@ -11,6 +11,7 @@ describe('test',() => {
             registerPage.fillFormInit(user)
             registerAssertions.validateSignUpUrl()
             registerPage.fillAccountInformation(user)
+            registerAssertions.validateAccountCreatedUrl()
         })
         
 
