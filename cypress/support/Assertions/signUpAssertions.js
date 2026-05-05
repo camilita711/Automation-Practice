@@ -3,7 +3,7 @@ import { BaseAssertions } from "./baseAssertions"
 class RegisterAssertions extends BaseAssertions {
     elements = {
 
-        baseUrl : "https://automationexercise.com",
+        baseUrl : "https://automationexercise.com/",
         loginURL : "https://automationexercise.com/login",
         signUpUrl : "https://automationexercise.com/signup",
         accountCreated: "https://automationexercise.com/account_created"
@@ -18,6 +18,9 @@ class RegisterAssertions extends BaseAssertions {
         this.urlEqual(this.elements.accountCreated)
     }
 
+    validateLoginUrl() {
+        this.urlEqual(this.elements.baseUrl)
+    }
   
 
 }
