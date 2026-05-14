@@ -1,22 +1,40 @@
 
 import { BasePage } from "./basePage.js";
 
-export class ProductsPage extends basePage {
+export class ProductsPage extends BasePage {
     elements = {
-        buttonAddCar : '[data-product-id="3"]',
-        clickViewCar : '[href="/view_cart"]',
-        checkOutButton : '#do_action > .container > .row > .col-sm-6 > .btn.btn-default.check_out',
-        placeOrderButton : '#cart_items > .container > div a.btn.btn-default.check_out'.eq(0)
+        productCart : '.single-products',
+        buttonAddCart : '.btn.btn-default.add-to-cart',
+        popUpViewCart : '.text-center > a[href="/view_cart"]',
+        btnViewCart : '[href="/view_cart"]',
+        checkOutButton : '.btn.btn-default.check_out',
+        placeOrderButton : '#cart_items > .container > div a.btn.btn-default.check_out'
 
     } 
-    selectProducts(user) {
-        this.click(this.elements.buttonAddCar)
-        this.click(this.elements.clickViewCar)
+
+
+    selectProducts(index) {
+        this.mouseoverIndex(this.elements.productCart, index)
+        this.clickIndex(this.elements.buttonAddCart, index)
+    }
+
+    viewCart() {
+        this.click(this.elements.popUpViewCart)
+    }
+
+    procedToCheckout(){
         this.click(this.elements.checkOutButton)
+    }
+
+    placeOrder(){
         this.click(this.elements.placeOrderButton)
     }
 
 
+
+
+
+
 }
 
-export const productsPage = ProductsPage()
+export const productsPage = new ProductsPage()
