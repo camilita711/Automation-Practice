@@ -3,11 +3,17 @@ export class BasePage {
         cy.get(selector).type(data)
     }
     click(selector){
-        cy.get(selector).click()
+        cy.get(selector).click({force: true})
     }
     select(selector,value){
         cy.get(selector).select(value)
     }
+    mouseoverIndex(selector, index = 0){
+        cy.get(selector).eq(index).trigger('mouseover', {force: true})
+    }
+    clickIndex(selector, index = 0) {
+        cy.get(selector).eq(index).click({force: true})
+}
 }
 
 export const basePage = new BasePage()
