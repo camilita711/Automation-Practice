@@ -1,5 +1,4 @@
-import { productsPage, ProductsPage } from "../support/Pages/productsPage.js";
-import { loginPage, LoginPage } from "../support/Pages/loginPage.js";
+import { purchasFlow } from "../support/Flows/purchaseFlow.js"
 
 
 describe('Test',() => {
@@ -11,8 +10,7 @@ describe('Test',() => {
 
     it('Select Product', () => {
         cy.visit('/products')
-        productsPage.selectProducts(1)
-       
+       purchasFlow(1)
         
 
     })
