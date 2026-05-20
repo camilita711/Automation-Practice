@@ -20,13 +20,15 @@ export class LoginPage extends BasePage {
     clickLoginBtn(){
         this.click(this.elements.loginButton)
     }
+
+    fillLogin(user){
+        this.fillEmail(user)
+        this.fillPassword(user)
+        this.clickLoginBtn()
+}
     
+
     
-    fillLogin(user) {
-    this.type(this.elements.loginEmail, user.email)
-    this.type(this.elements.loginPassword, user.password) 
-    this.click(this.elements.loginButton)
-    }
 }
  export const loginPage = new LoginPage()
 

@@ -1,16 +1,21 @@
-import { purchasFlow } from "../support/Flows/purchaseFlow.js"
+import { purchaseFlow } from "../support/Flows/purchaseFlow.js"
 
 
 describe('Test',() => {
     beforeEach( () => {
     cy.fixture('user').then(user => {
-        cy.login(user)
+        const validUser = user.validUser
+        cy.login(validUser)
     })
 })
 
     it('Select Product', () => {
         cy.visit('/products')
-       purchasFlow(1)
+        cy.fixture('cards').then(cards   => {
+            const validCard = cards.validCard
+            purchaseFlow(1, validCard)
+        })
+        
         
 
     })
