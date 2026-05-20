@@ -3,6 +3,7 @@ import { BasePage } from "./basePage.js";
 export class PaymentPage extends BasePage {
 
     elements = {
+
         nameCard : '[data-qa="name-on-card"]',
         cardNumber: '[data-qa="card-number"]',
         cvc: '[data-qa="cvc"]',
@@ -11,27 +12,18 @@ export class PaymentPage extends BasePage {
         payButton: '[data-qa="pay-button"]'
     }
 
-    fillNameCard(user){
-        this.type(this.elements.nameCard, user)
-    }
+fillCardInformation(cards){
 
-    fillCardNumber(user){
-        this.type(this.elements.cardNumber, user)
-    }
-
-    fillCvc(user){
-        this.type(this.elements.cvc, user)
-    }
-
-    fillExpiryMonth(user){
-        this.type(this.elements.expiryMonth, user)
-    }
-
-    fillExpiryYear(user){
-        this.type(this.elements.expiryYear, user)
-    }
+    this.type(this.elements.nameCard, cards.nameCard)
+    this.type(this.elements.cardNumber, cards.cardNumber)
+    this.type(this.elements.cvc, cards.cvc)
+    this.type(this.elements.expiryMonth, cards.expiryMonth)
+    this.type(this.elements.expiryYear, cards.expiryYear)
+}
 
     payOrder(){
         this.click(this.elements.payButton)
     }
 }
+
+export const paymentPage = new PaymentPage()
