@@ -1,4 +1,5 @@
 export class BasePage {
+    
     type(selector,data){
         cy.get(selector).type(data)
     }
