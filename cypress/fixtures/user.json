@@ -1,22 +1,22 @@
 {
-  "name": "Lila Ponce",
-  "email": "lila_test123@gmail.com",
-  "password": "Elcumple5",
-  "firstName": "Liliana",
-  "lastName": "Ponciana",
-  "company": "Omitividad",
-  "address": "Cruz Santa",
-  "address2": "OLa",
-  "country": "India",
-  "state": "RE",
-  "city": "indiana",
-  "zipCode": "1010",
-  "mobileNumber": "62626262",
-  "birthday": {
-    "day": 15,
-    "month": 3,
-    "year": "1995"
+  "validUser":{
+      "name": "Lila Ponce",
+      "email": "lila_test123@gmail.com",
+      "password": "Elcumple5",
+      "firstName": "Liliana",
+      "lastName": "Ponciana",
+      "company": "Omitividad",
+      "address": "Cruz Santa",
+      "address2": "OLa",
+      "country": "India",
+      "state": "RE",
+      "city": "indiana",
+      "zipCode": "1010",
+      "mobileNumber": "62626262",
+      "birthday": {
+        "day": 15,
+        "month": 3,
+        "year": "1995"
+      }
   }
-
-
 }

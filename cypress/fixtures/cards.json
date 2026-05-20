@@ -1,0 +1,10 @@
+{
+    "validCard": {
+        "nameCard":"lila",
+        "cardNumber":"4040404040400",
+        "cvc":"123",
+        "expiryMonth":"12",
+        "expiryYear":"2026"
+    }
+     
+}
