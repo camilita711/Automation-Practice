@@ -8,7 +8,8 @@ beforeEach( () => {
 describe('Login test', () => {
     it('login test', () => {
         cy.fixture('user').then( user => {
-            loginPage.fillLogin(user)
+            const validUser = user.validUser
+            loginPage.fillLogin(validUser)
             registerAssertions.validateLoginUrl()
         })
     })
