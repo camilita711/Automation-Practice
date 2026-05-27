@@ -13,6 +13,10 @@ class RegisterAssertions extends BaseAssertions {
   validateLoginUrl() {
     this.urlEqual(routes.login);
   }
+
+  validateHomeUrl() {
+    this.urlEqual(routes.home);
+  }
 }
 
 export const registerAssertions = new RegisterAssertions();

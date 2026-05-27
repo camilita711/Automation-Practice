@@ -22,6 +22,10 @@ export class BaseAssertions {
   elementHaveValue(selector, value) {
     cy.get(selector).should('have.value', value);
   }
+
+  elementHaveProperty(selector, propertyName, expectedValue) {
+    cy.get(selector).should('have.prop', propertyName).and('include', expectedValue);
+  }
 }
 
 export const baseAssertions = new BaseAssertions();

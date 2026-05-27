@@ -10,7 +10,7 @@ describe('Login test', () => {
     cy.fixture('user').then((user) => {
       const validUser = user.validUser;
       loginPage.fillLogin(validUser);
-      registerAssertions.validateLoginUrl();
+      registerAssertions.validateHomeUrl();
     });
   });
 });

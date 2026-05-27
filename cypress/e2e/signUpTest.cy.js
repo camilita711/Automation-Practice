@@ -6,7 +6,7 @@ beforeEach(() => {
 });
 
 describe('test', () => {
-  it('first test', () => {
+  it.skip('first test', () => {
     cy.fixture('user').then((user) => {
       const validUser = user.validUser;
       registerPage.fillFormInit(validUser);

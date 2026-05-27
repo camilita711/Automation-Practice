@@ -4,6 +4,7 @@ export class PaymentAssertions extends BaseAssertions {
   elements = {
     orderPlaced: '[data-qa="order-placed"]',
     messagePayConfirmation: '#success_message',
+    nameCard: '[data-qa="name-on-card"]',
   };
 
   validateOrderPlaced() {
@@ -12,6 +13,10 @@ export class PaymentAssertions extends BaseAssertions {
 
   validateInvalidCard() {
     this.elementContainText(this.elements.messagePayConfirmation, 'Invalid Card');
+  }
+
+  validateEmptyCard() {
+    this.elementHaveProperty(this.elements.nameCard, 'validity', { valueMissing: true });
   }
 }
 
