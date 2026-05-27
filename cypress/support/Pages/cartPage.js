@@ -1,15 +1,13 @@
- import { BasePage } from "./basePage.js";
+import { BasePage } from './basePage.js';
 
- export class CartPage extends BasePage {
+export class CartPage extends BasePage {
+  elements = {
+    checkOutButton: '.btn.btn-default.check_out',
+  };
 
-    elements = {
-        checkOutButton : '.btn.btn-default.check_out'
-    }
+  procedToCheckout() {
+    this.click(this.elements.checkOutButton);
+  }
+}
 
-    procedToCheckout(){
-        this.click(this.elements.checkOutButton)
-    }
-
- }
-
- export const cartPage = new CartPage()
+export const cartPage = new CartPage();

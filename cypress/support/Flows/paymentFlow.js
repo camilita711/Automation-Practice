@@ -1,7 +1,6 @@
-import { paymentPage, PaymentPage } from "../Pages/paymentPage.js";
+import { paymentPage, PaymentPage } from '../Pages/paymentPage.js';
 
-export function paymentFlow(card){
-
-    paymentPage.fillCardInformation(card)
-    paymentPage.payOrder()
+export function paymentFlow(card) {
+  paymentPage.fillCardInformation(card);
+  paymentPage.payOrder();
 }

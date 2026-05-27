@@ -1,28 +1,18 @@
-import { BaseAssertions } from "./baseAssertions"
+import { BaseAssertions } from './baseAssertions';
+import { routes } from '../Constants/routes.js';
 
 class RegisterAssertions extends BaseAssertions {
-    elements = {
+  validateSignUpUrl() {
+    this.urlEqual(routes.signUpUrl);
+  }
 
-        baseUrl : "https://automationexercise.com/",
-        loginURL : "https://automationexercise.com/login",
-        signUpUrl : "https://automationexercise.com/signup",
-        accountCreated: "https://automationexercise.com/account_created"
+  validateAccountCreatedUrl() {
+    this.urlEqual(routes.accountCreated);
+  }
 
-    }
-
-    validateSignUpUrl() {
-        this.urlEqual(this.elements.signUpUrl)
-    }
-
-    validateAccountCreatedUrl() {
-        this.urlEqual(this.elements.accountCreated)
-    }
-
-    validateLoginUrl() {
-        this.urlEqual(this.elements.baseUrl)
-    }
-  
-
+  validateLoginUrl() {
+    this.urlEqual(routes.login);
+  }
 }
 
-export const registerAssertions = new RegisterAssertions()
+export const registerAssertions = new RegisterAssertions();

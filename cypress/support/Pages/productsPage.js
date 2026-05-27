@@ -1,40 +1,31 @@
-
-import { BasePage } from "./basePage.js";
+import { BasePage } from './basePage.js';
 
 export class ProductsPage extends BasePage {
-    elements = {
-        productCart : '.single-products',
-        buttonAddCart : '.btn.btn-default.add-to-cart',
-        popUpViewCart : '.text-center > a[href="/view_cart"]',
-        btnViewCart : '[href="/view_cart"]',
-        checkOutButton : '.btn.btn-default.check_out',
-        placeOrderButton : '#cart_items > .container > div a.btn.btn-default.check_out'
+  elements = {
+    productCart: '.single-products',
+    buttonAddCart: '.btn.btn-default.add-to-cart',
+    popUpViewCart: '.text-center > a[href="/view_cart"]',
+    btnViewCart: '[href="/view_cart"]',
+    btnContinueShopping: 'btn.btn-success.close-modal.btn-block',
+  };
 
-    } 
+  selectProducts(index) {
+    this.mouseoverIndex(this.elements.productCart, index);
+    this.clickIndex(this.elements.buttonAddCart, index);
+  }
 
+  viewCart() {
+    this.click(this.elements.popUpViewCart);
+  }
 
-    selectProducts(index) {
-        this.mouseoverIndex(this.elements.productCart, index)
-        this.clickIndex(this.elements.buttonAddCart, index)
-    }
+  continueShopping() {
+    this.click(this.elements.btnContinueShopping);
+  }
 
-    viewCart() {
-        this.click(this.elements.popUpViewCart)
-    }
-
-    procedToCheckout(){
-        this.click(this.elements.checkOutButton)
-    }
-
-    placeOrder(){
-        this.click(this.elements.placeOrderButton)
-    }
-
-
-
-
-
-
+  addProduct(index) {
+    this.selectProducts(index);
+    this.viewCart();
+  }
 }
 
-export const productsPage = new ProductsPage()
+export const productsPage = new ProductsPage();

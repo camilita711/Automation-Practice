@@ -1,10 +1,41 @@
 {
-    "validCard": {
-        "nameCard":"lila",
-        "cardNumber":"4040404040400",
-        "cvc":"123",
-        "expiryMonth":"12",
-        "expiryYear":"2026"
-    }
-     
+  "validCard": {
+    "nameCard": "lila",
+    "cardNumber": "4040404040400",
+    "cvc": "123",
+    "expiryMonth": "12",
+    "expiryYear": "2026"
+  },
+
+  "invalidCard": {
+    "nameCard": "01",
+    "cardNumber": "00",
+    "cvc": "123",
+    "expiryMonth": "12",
+    "expiryYear": "2026"
+  },
+
+  "invalidCardCvc": {
+    "nameCard": "01",
+    "cardNumber": "4040404040400",
+    "cvc": "1",
+    "expiryMonth": "12",
+    "expiryYear": "2026"
+  },
+
+  "emptyCard": {
+    "nameCard": " ",
+    "cardNumber": " ",
+    "cvc": " ",
+    "expiryMonth": " ",
+    "expiryYear": " "
+  },
+
+  "expiredCard": {
+    "nameCard": "lila",
+    "cardNumber": "4040404040400",
+    "cvc": "123",
+    "expiryMonth": "12",
+    "expiryYear": "2025"
+  }
 }

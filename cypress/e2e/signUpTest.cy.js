@@ -1,19 +1,18 @@
-import { registerPage } from "../support/Pages/signUpPages.js"
-import { registerAssertions } from "../support/Assertions/signUpAssertions.js"
+import { registerPage } from '../support/Pages/signUpPages.js';
+import { registerAssertions } from '../support/Assertions/signUpAssertions.js';
 
-beforeEach( () => {
-    cy.visit('/login')
-})
+beforeEach(() => {
+  cy.visit('/login');
+});
 
-describe('test',() => {
-    it('first test', () =>{
-        cy.fixture('user').then(user =>{
-            registerPage.fillFormInit(user)
-            registerAssertions.validateSignUpUrl()
-            registerPage.fillAccountInformation(user)
-            registerAssertions.validateAccountCreatedUrl()
-        })
-        
-
-    })
-})
+describe('test', () => {
+  it('first test', () => {
+    cy.fixture('user').then((user) => {
+      const validUser = user.validUser;
+      registerPage.fillFormInit(validUser);
+      registerAssertions.validateSignUpUrl();
+      registerPage.fillAccountInformation(validUser);
+      registerAssertions.validateAccountCreatedUrl();
+    });
+  });
+});
