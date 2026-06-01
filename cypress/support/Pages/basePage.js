@@ -8,7 +8,7 @@ export class BasePage {
   }
 
   click(selector) {
-    cy.get(selector).click({ force: true });
+    cy.get(selector).click();
   }
 
   select(selector, value) {

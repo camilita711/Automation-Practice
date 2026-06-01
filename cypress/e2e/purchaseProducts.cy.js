@@ -26,6 +26,7 @@ describe('Purchase Flow', () => {
 
     cy.get('@userData').then((user) => {
       cy.login(user.validUser);
+      cartPage.clearCart();
     });
 
     cy.visit('/products');
